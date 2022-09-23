@@ -32,4 +32,4 @@ jobs:
         with:
           schema: 'https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.0/swagger.json'
           token: ${{ secrets.SCHEMATHESIS_TOKEN }}
-          max-examples: 1
+          max-examples: 100
