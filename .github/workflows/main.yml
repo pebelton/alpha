@@ -25,7 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Schemathesis
       # You may pin to the exact commit or the version.
       # uses: schemathesis/action@64470e113c88539e98bf7bb5a1541154e3ec48bf
       - uses: schemathesis/action@v1.0.2
