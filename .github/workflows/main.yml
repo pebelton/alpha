@@ -30,6 +30,6 @@ jobs:
       # uses: schemathesis/action@64470e113c88539e98bf7bb5a1541154e3ec48bf
       - uses: schemathesis/action@v1.0.2
         with:
-          schema: 'https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json'
+          schema: 'https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.0/swagger.json'
           token: ${{ secrets.SCHEMATHESIS_TOKEN }}
           max-examples: 100
