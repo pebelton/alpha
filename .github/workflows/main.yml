@@ -29,4 +29,4 @@ jobs:
       # uses: schemathesis/action@64470e113c88539e98bf7bb5a1541154e3ec48bf
       - uses: schemathesis/action@v1.0.2
         with:
-          schema: 'http://127.0.0.1:5001/openapi.json'
+          schema: 'https://app.swaggerhub.com/apis-docs/FOSSA1/App/0.3.7#/openapi.json'
