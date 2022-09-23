@@ -30,3 +30,4 @@ jobs:
       - uses: schemathesis/action@v1.0.2
         with:
           schema: 'https://app.swaggerhub.com/apis-docs/FOSSA1/App/0.3.7#/openapi.json'
+          token: ${{ secrets.SCHEMATHESIS_TOKEN }}
