@@ -29,8 +29,8 @@ jobs:
       
       - name: setup python
         uses: actions/setup-python@v4
-        with:
-          python-version: 3.10 # install the python needed
+        #with:
+        #  python-version: 3.10 # install the python needed
           
       - name: Schemathesis
         run: |
