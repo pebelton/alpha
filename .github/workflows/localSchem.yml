@@ -37,4 +37,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install schemathesis
           schemathesis run --hypothesis-max-examples=5 --report xx.txt https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
+          cat xx.txt
       
