@@ -43,6 +43,10 @@ jobs:
           #schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
           schemathesis run --checks all --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json > runOutput.txt
           
+      - name: extra
+        if: always()
+        run: ls -a
+          
 
       - name: Attach report
         uses: actions/upload-artifact@v3
