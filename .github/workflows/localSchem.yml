@@ -34,13 +34,14 @@ jobs:
           
       - name: Schemathesis
         run: |
+          ls -l
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
           # contains max tests
           #schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
           schemathesis run --checks all --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json > runOutput.txt
-          ls -l
+          
 
       - name: Attach report
         uses: actions/upload-artifact@v3
