@@ -26,27 +26,23 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: check out repo content
         uses: actions/checkout@v2
-      
+        
+     
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 # install the python needed
-          
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+
       - name: Schemathesis
         run: |
-          ls -a
-          ls -d
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
-          # contains max tests
-          #schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
           schemathesis run --checks all --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json > runOutput.txt
-          
-      - name: extra
-        if: always()
-        run: ls -a
-          
 
       - name: Attach report
         uses: actions/upload-artifact@v3
