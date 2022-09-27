@@ -34,7 +34,8 @@ jobs:
           
       - name: Schemathesis
         run: |
-          ls -l
+          ls -a
+          ls -d
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
