@@ -50,3 +50,5 @@ jobs:
         if: always()
         with:
          report_paths: 'results.xml'
+         include_passed: true
+         require_tests: true
