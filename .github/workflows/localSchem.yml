@@ -38,5 +38,6 @@ jobs:
           pip install httpx
           pip install schemathesis
           schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=xx.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.0/swagger.json
+          if: always()
           cat xx.xml
       
