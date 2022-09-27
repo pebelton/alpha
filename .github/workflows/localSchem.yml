@@ -65,7 +65,10 @@ jobs:
           ./.github/scripts/extractSummary.sh
         shell: bash
         
-      - name: Display Summary
+      - name: Attach report
+        uses: actions/upload-artifact@v3
         if: always()
-        run: cat summary.txt
+        with:
+          name: Summary.txt
+          path: summary.txt
      
