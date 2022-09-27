@@ -56,3 +56,11 @@ jobs:
          check_name: 'Schemathesis Test Report'
          include_passed: 'true'
          require_tests: 'true'
+         
+      - name: Extract Summary
+        run: ./.github/scritps/extractSummary.sh
+        shell: bash
+        
+      - name: Display Summary
+        run: cat summary.txt
+     
