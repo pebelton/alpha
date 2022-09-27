@@ -58,4 +58,4 @@ jobs:
         with:
           name: Schemathesis Tests
           path: results.xml
-          reporter: jest-Junit
+          reporter: jest-junit
