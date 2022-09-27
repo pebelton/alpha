@@ -58,9 +58,11 @@ jobs:
          require_tests: 'true'
          
       - name: Extract Summary
+        if: always()
         run: ./.github/scritps/extractSummary.sh
         shell: bash
         
       - name: Display Summary
+        if: always()
         run: cat summary.txt
      
