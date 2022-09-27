@@ -29,13 +29,13 @@ jobs:
       
       - name: setup python
         uses: actions/setup-python@v4
-        with:
-          python-version: 3.8 # install the python needed
+        #with:
+          #python-version: 3.8 # install the python needed
           
       - name: Schemathesis
         run: |
           python -m pip install --upgrade pip
           pip install schemathesis
-          schemathesis run --hypothesis-max-examples=5 https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
-          cat junit.xml
+          schemathesis run --hypothesis-max-examples=5 --debug-output-file xx.txt https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
+          cat xx.txt
       
