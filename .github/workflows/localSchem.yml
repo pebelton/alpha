@@ -59,7 +59,7 @@ jobs:
          
       - name: Extract Summary
         if: always()
-        run: ./.github/scritps/extractSummary.sh
+        run: ./.github/scripts/extractSummary.sh
         shell: bash
         
       - name: Display Summary
