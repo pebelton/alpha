@@ -37,7 +37,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
-          schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
+          # contains max tests
+          #schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
+          schemathesis run --checks all --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
 
       - name: Attach report
         uses: actions/upload-artifact@v3
