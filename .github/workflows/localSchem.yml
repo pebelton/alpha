@@ -37,18 +37,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
-          schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
-          
-      - name: Report Output
-        if: always()
-        run: |
-          cat results.xml
+          schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
           
 # Schemathesis results test output         
       - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
+        uses: mikepenz/action-junit-report@v3.5.0
         if: always()
         with:
          report_paths: 'results.xml'
-         include_passed: true
-         require_tests: true
+         check_name: 'Schemathesis Test Report'
+         include_passed: 'true'
+         require_tests: 'true'
