@@ -37,7 +37,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
-          schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
+          schemathesis run --checks all --hypothesis-max-examples=5 --junit-xml=results.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.2/swagger.json
           
       - name: Report Output
         if: always()
