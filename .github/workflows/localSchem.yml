@@ -50,12 +50,3 @@ jobs:
         if: always()
         with:
          report_paths: 'results.xml'
-      
-# second junit test output
-      - name: Publish Test Report2
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-          name: Schemathesis Tests
-          path: results.xml
-          reporter: jest-junit
