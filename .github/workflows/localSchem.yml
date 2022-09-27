@@ -37,6 +37,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install httpx
           pip install schemathesis
-          schemathesis run --hypothesis-max-examples=5 --debug-output-file xx.txt https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
-          cat xx.txt
+          schemathesis run --hypothesis-max-examples=5 --junit-xml=xx.xml https://api.swaggerhub.com/apis/PEBELTON_1/trial/1.0.1/swagger.json
+          cat xx.xml
       
