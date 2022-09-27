@@ -50,5 +50,6 @@ jobs:
         if: always()
         with:
          report_paths: 'results.xml'
+         check_name: 'Schemathesis Test Report'
          include_passed: true
          require_tests: true
