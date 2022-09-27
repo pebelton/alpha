@@ -59,7 +59,9 @@ jobs:
          
       - name: Extract Summary
         if: always()
-        run: ./.github/scripts/extractSummary.sh
+        run: |
+          sudo chmod 600 ./.github/scripts/extractSummary.sh
+          ./.github/scripts/extractSummary.sh
         shell: bash
         
       - name: Display Summary
