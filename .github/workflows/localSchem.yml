@@ -64,8 +64,18 @@ jobs:
       - name: Extract Summary
         if: always()
         run: |
-          sudo chmod 701 .github/scripts/extractSummary.sh
-          .github/scripts/extractSummary.sh
+          ls -a
+          startLineNum="$(grep -n "== SUMMARY ==" runOutput.txt | head -n 1 | cut -d: -f1)"
+          endLineNum="$(grep -n "JUnit XML file:" runOutput.txt | head -n 1 | cut -d: -f1)"
+          echo "$startLineNum"
+          echo "$endLineNum"
+          awk -v s="$startLineNum" -v e="$endLineNum" 'NR>=s && NR<=e' runOutput.txt > summary.txt
+
+          ls -a
+      #    sudo chmod 701 .github/scripts/extractSummary.sh
+      #    .github/scripts/extractSummary.sh
+          
+          
         shell: bash
         
       - name: Attach report
